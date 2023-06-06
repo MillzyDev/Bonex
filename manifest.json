@@ -1,0 +1,10 @@
+{
+    "name": "Bonex",
+    "version_number": "0.1.0",
+    "website_url": "https://github.com/MillzyDev/Bonex",
+    "description": "An XML-based UI library for BONELAB.",
+    "dependencies": [
+        "LavaGang-MelonLoader-0.5.7",
+        "Millzy-Boneject-1.1.0"
+    ]
+}
