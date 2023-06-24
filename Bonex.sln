@@ -2,8 +2,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bonex", "Bonex\Bonex.csproj", "{F1106DF2-18D2-4DA2-93C1-E78EECB353CB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bonex.Boneject", "Bonex.Boneject\Bonex.Boneject.csproj", "{0A152302-3833-43A1-B0C8-EBA37261D9BA}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bonex.Test", "Bonex.Test\Bonex.Test.csproj", "{7B413DE9-6E06-47B7-8AF6-ACD89AA0E01D}"
 EndProject
 Global
@@ -16,10 +14,6 @@ Global
 		{F1106DF2-18D2-4DA2-93C1-E78EECB353CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F1106DF2-18D2-4DA2-93C1-E78EECB353CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F1106DF2-18D2-4DA2-93C1-E78EECB353CB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0A152302-3833-43A1-B0C8-EBA37261D9BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0A152302-3833-43A1-B0C8-EBA37261D9BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0A152302-3833-43A1-B0C8-EBA37261D9BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0A152302-3833-43A1-B0C8-EBA37261D9BA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7B413DE9-6E06-47B7-8AF6-ACD89AA0E01D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7B413DE9-6E06-47B7-8AF6-ACD89AA0E01D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B413DE9-6E06-47B7-8AF6-ACD89AA0E01D}.Release|Any CPU.ActiveCfg = Release|Any CPU
