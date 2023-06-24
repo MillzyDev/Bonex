@@ -5,11 +5,11 @@
     <PropertyGroup>
         <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
         <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-        <ProjectGuid>{F1106DF2-18D2-4DA2-93C1-E78EECB353CB}</ProjectGuid>
+        <ProjectGuid>{0A152302-3833-43A1-B0C8-EBA37261D9BA}</ProjectGuid>
         <OutputType>Library</OutputType>
         <AppDesignerFolder>Properties</AppDesignerFolder>
-        <RootNamespace>Bonex</RootNamespace>
-        <AssemblyName>Bonex</AssemblyName>
+        <RootNamespace>Bonex.Boneject</RootNamespace>
+        <AssemblyName>Bonex.Boneject</AssemblyName>
         <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
         <FileAlignment>512</FileAlignment>
     </PropertyGroup>
