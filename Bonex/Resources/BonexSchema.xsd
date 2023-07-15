@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" id="Bonex">
+    
+    <xs:simpleType name="bool">
+        <xs:union>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="true" />
+                    <xs:enumeration value="false" />
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:pattern value="(~[a-zA-Z0-9-]*)" />
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:union>
+    </xs:simpleType>
+    
+    <xs:simpleType name="TextAlignmentOptions">
+        <xs:union>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="TopLeft" />
+                    <xs:enumeration value="Top" />
+                    <xs:enumeration value="TopRight" />
+                    <xs:enumeration value="TopJustified" />
+                    <xs:enumeration value="TopFlush" />
+                    <xs:enumeration value="TopGeoAligned" />
+                    <xs:enumeration value="Left" />
+                    <xs:enumeration value="Center" />
+                    <xs:enumeration value="Right" />
+                    <xs:enumeration value="Justified" />
+                    <xs:enumeration value="Flush" />
+                    <xs:enumeration value="CenterGeoAligned" />
+                    <xs:enumeration value="BottomLeft" />
+                    <xs:enumeration value="Bottom" />
+                    <xs:enumeration value="BottomRight" />
+                    <xs:enumeration value="BottomJustified" />
+                    <xs:enumeration value="BottomFlush" />
+                    <xs:enumeration value="BottomGeoAligned" />
+                    <xs:enumeration value="BaselineLeft" />
+                    <xs:enumeration value="Baseline" />
+                    <xs:enumeration value="BaselineRight" />
+                    <xs:enumeration value="BaselineJustified" />
+                    <xs:enumeration value="BaselineFlush" />
+                    <xs:enumeration value="BaselineGeoAligned" />
+                    <xs:enumeration value="MidlineLeft" />
+                    <xs:enumeration value="Midline" />
+                    <xs:enumeration value="MidlineRight" />
+                    <xs:enumeration value="MidlineJustified" />
+                    <xs:enumeration value="MidlineFlush" />
+                    <xs:enumeration value="MidlineGeoAligned" />
+                    <xs:enumeration value="CaplineLeft" />
+                    <xs:enumeration value="Capline" />
+                    <xs:enumeration value="CaplineRight" />
+                    <xs:enumeration value="CaplineJustified" />
+                    <xs:enumeration value="CaplineFlush" />
+                    <xs:enumeration value="CaplineGeoAligned" />
+                </xs:restriction>
+            </xs:simpleType>
+            
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:pattern value="(~[a-zA-Z0-9-]*)" />
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:union>
+    </xs:simpleType>
+
+    <xs:simpleType name="color-string">
+        <xs:union>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="red" />
+                    <xs:enumeration value="cyan" />
+                    <xs:enumeration value="blue" />
+                    <xs:enumeration value="darkblue" />
+                    <xs:enumeration value="lightblue" />
+                    <xs:enumeration value="purple" />
+                    <xs:enumeration value="yellow" />
+                    <xs:enumeration value="lime" />
+                    <xs:enumeration value="fuchsia" />
+                    <xs:enumeration value="white" />
+                    <xs:enumeration value="silver" />
+                    <xs:enumeration value="grey" />
+                    <xs:enumeration value="black" />
+                    <xs:enumeration value="orange" />
+                    <xs:enumeration value="brown" />
+                    <xs:enumeration value="maroon" />
+                    <xs:enumeration value="green" />
+                    <xs:enumeration value="olive" />
+                    <xs:enumeration value="navy" />
+                    <xs:enumeration value="teal" />
+                    <xs:enumeration value="aqua" />
+                    <xs:enumeration value="magenta" />
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:pattern value="(#[a-fA-F0-9]*)" />
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:pattern value="(~[a-zA-Z0-9-]*)" />
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:union>
+    </xs:simpleType>
+
+    <xs:simpleType name="TextOverflowModes">
+        <xs:union>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="Overflow" />
+                    <xs:enumeration value="Ellipsis" />
+                    <xs:enumeration value="Masking" />
+                    <xs:enumeration value="Truncate" />
+                    <xs:enumeration value="ScrollRect" />
+                    <xs:enumeration value="Page" />
+                    <xs:enumeration value="Linked" />
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:pattern value="(~[a-zA-Z0-9-]*)" />
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:union>
+    </xs:simpleType>
+    
+    <xs:complexType name="TextTag">
+        <xs:sequence>
+            <xs:any minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        
+        <xs:attribute name="anchor-min-x" type="xs:string">
+            <xs:annotation>
+                <xs:documentation>The normalized x position in the parent RectTransform that the lower left corner is
+                    anchored to.
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        
+        <xs:attribute name="anchor-min-y" type="xs:string">
+            <xs:annotation>
+                <xs:documentation>The normalized y position in the parent RectTransform that the lower left corner is
+                    anchored to.
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        
+        <xs:attribute name="anchor-max-x" type="xs:string">
+            <xs:annotation>
+                <xs:documentation>The normalized x position in the parent RectTransform that the upper right corner is
+                    anchored to.
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        
+        <xs:attribute name="anchor-max-y" type="xs:string">
+            <xs:annotation>
+                <xs:documentation>The normalized y position in the parent RectTransform that the upper right corner is
+                    anchored to.
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        
+        <xs:attribute name="anchor-pos-x" type="xs:string">
+            <xs:annotation>
+                <xs:documentation>The x position of the pivot of this RectTransform relative to the anchor reference
+                    point.
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        
+        <xs:attribute name="anchor-pos-y" type="xs:string">
+            <xs:annotation>
+                <xs:documentation>The y position of the pivot of this RectTransform relative to the anchor reference
+                    point.
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        
+        <xs:attribute name="size-delta-x" type="xs:string">
+            <xs:annotation>
+                <xs:documentation>The width of this RectTransform relative to the distances between the anchors.
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        
+        <xs:attribute name="size-delta-y" type="xs:string">
+            <xs:annotation>
+                <xs:documentation>The height of this RectTransform relative to the distances between the anchors.
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        
+        <xs:attribute name="pivot-x" type="xs:string">
+            <xs:annotation>
+                <xs:documentation>Normalized x position to rotate around</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        
+        <xs:attribute name="pivot-y" type="xs:string">
+            <xs:annotation>
+                <xs:documentation>Normalized y position to rotate around</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        
+        <xs:attribute name="hover-hint" type="xs:string">
+            <xs:annotation>
+                <xs:documentation>Text that will appear when a pointer hovers over</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        
+        <xs:attribute name="active" type="bool">
+            <xs:annotation>
+                <xs:documentation>Whether or not the GameObject this RectTransform belongs to is active
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        
+        <xs:attribute name="text" type="xs:string">
+            <xs:annotation>
+                <xs:documentation>Text to display</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        
+        <xs:attribute name="font-size" type="xs:string">
+            <xs:annotation>
+                <xs:documentation>Size of font</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        
+        <xs:attribute name="font-color" type="color-string">
+            <xs:annotation>
+                <xs:documentation>Color of font</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        
+        <xs:attribute name="color" type="color-string">
+            <xs:annotation>
+                <xs:documentation>Color of font</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        
+        <xs:attribute name="face-color" type="color-string">
+            <xs:annotation>
+                <xs:documentation>Face color of font</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        
+        <xs:attribute name="outline-color" type="color-string">
+            <xs:annotation>
+                <xs:documentation>Outline color of font</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        
+        <xs:attribute name="outline-width" type="xs:string">
+            <xs:annotation>
+                <xs:documentation>Width of font outline</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        
+        <xs:attribute name="rich-text" type="bool">
+            <xs:annotation>
+                <xs:documentation>Whether or not to enable [rich
+                    text](http://digitalnativestudios.com/textmeshpro/docs/rich-text/)
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        
+        <xs:attribute name="font-align" type="TextAlignmentOptions">
+            <xs:annotation>
+                <xs:documentation>How to align the text</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        
+        <xs:attribute name="align" type="TextAlignmentOptions">
+            <xs:annotation>
+                <xs:documentation>How to align the text</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        
+        <xs:attribute name="overflow-mode" type="TextOverflowModes">
+            <xs:annotation>
+                <xs:documentation>How to handle text overflow</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        
+        <xs:attribute name="word-wrapping" type="bool">
+            <xs:annotation>
+                <xs:documentation>Whether or not to wrap text</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        
+        <xs:attribute name="bold" type="bool">
+            <xs:annotation>
+                <xs:documentation>Whether or not text is bold</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        
+        <xs:attribute name="italics" type="bool">
+            <xs:annotation>
+                <xs:documentation>Whether or not to italicize text</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        
+        <xs:attribute name="underlined" type="bool">
+            <xs:annotation>
+                <xs:documentation>Whether or not to underline text</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        
+        <xs:attribute name="strikethrough" type="bool">
+            <xs:annotation>
+                <xs:documentation>Whether or not to strikethrough text</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        
+        <xs:attribute name="all-uppercase" type="bool">
+            <xs:annotation>
+                <xs:documentation>Whether or not to make the text all uppercase</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        
+        <xs:attribute name="tags" type="xs:string"/>
+        
+        <xs:attribute name="id" type="xs:string"/>
+    </xs:complexType>
+</xs:schema>
