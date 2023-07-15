@@ -209,12 +209,6 @@
             </xs:annotation>
         </xs:attribute>
         
-        <xs:attribute name="hover-hint" type="xs:string">
-            <xs:annotation>
-                <xs:documentation>Text that will appear when a pointer hovers over</xs:documentation>
-            </xs:annotation>
-        </xs:attribute>
-        
         <xs:attribute name="active" type="bool">
             <xs:annotation>
                 <xs:documentation>Whether or not the GameObject this RectTransform belongs to is active
