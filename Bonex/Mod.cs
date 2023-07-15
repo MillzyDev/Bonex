@@ -1,6 +1,8 @@
-﻿namespace Bonex
+﻿using Boneject;
+
+namespace Bonex
 {
-    public class Mod
+    public class Mod : InjectableMelonMod
     {
         
     }
