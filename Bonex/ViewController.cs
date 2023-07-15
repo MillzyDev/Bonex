@@ -65,7 +65,7 @@ namespace Bonex
         {
             try
             {
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             } 
             catch(Exception e)
             {
