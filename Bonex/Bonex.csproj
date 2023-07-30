@@ -40,40 +40,40 @@
     
     <ItemGroup>
         <Reference Include="Assembly-CSharp">
-          <HintPath>$(BonelabDir)\MelonLoader\Managed\Assembly-CSharp.dll</HintPath>
+          <HintPath>$(GameDir)\MelonLoader\Managed\Assembly-CSharp.dll</HintPath>
         </Reference>
         <Reference Include="Assembly-CSharp-firstpass">
-          <HintPath>$(BonelabDir)\MelonLoader\Managed\Assembly-CSharp-firstpass.dll</HintPath>
+          <HintPath>$(GameDir)\MelonLoader\Managed\Assembly-CSharp-firstpass.dll</HintPath>
         </Reference>
-        <Reference Include="Boneject">
-          <HintPath>$(BonelabDir)\Mods\Boneject.dll</HintPath>
+        <Reference Include="BoneLib">
+          <HintPath>$(GameDir)\Mods\BoneLib.dll</HintPath>
         </Reference>
         <Reference Include="Il2Cppmscorlib">
-          <HintPath>$(BonelabDir)\MelonLoader\Managed\Il2Cppmscorlib.dll</HintPath>
+          <HintPath>$(GameDir)\MelonLoader\Managed\Il2Cppmscorlib.dll</HintPath>
         </Reference>
         <Reference Include="MelonLoader">
-          <HintPath>$(BonelabDir)\MelonLoader\MelonLoader.dll</HintPath>
+          <HintPath>$(GameDir)\MelonLoader\MelonLoader.dll</HintPath>
         </Reference>
         <Reference Include="UnhollowerBaseLib">
-          <HintPath>$(BonelabDir)\MelonLoader\Managed\UnhollowerBaseLib.dll</HintPath>
+          <HintPath>$(GameDir)\MelonLoader\Managed\UnhollowerBaseLib.dll</HintPath>
         </Reference>
         <Reference Include="UnhollowerRuntimeLib">
-          <HintPath>$(BonelabDir)\MelonLoader\Managed\UnhollowerRuntimeLib.dll</HintPath>
+          <HintPath>$(GameDir)\MelonLoader\Managed\UnhollowerRuntimeLib.dll</HintPath>
         </Reference>
         <Reference Include="Unity.TextMeshPro">
-          <HintPath>$(BonelabDir)\MelonLoader\Managed\Unity.TextMeshPro.dll</HintPath>
+          <HintPath>$(GameDir)\MelonLoader\Managed\Unity.TextMeshPro.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine">
-          <HintPath>$(BonelabDir)\MelonLoader\Managed\UnityEngine.dll</HintPath>
+          <HintPath>$(GameDir)\MelonLoader\Managed\UnityEngine.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.CoreModule">
-          <HintPath>$(BonelabDir)\MelonLoader\Managed\UnityEngine.CoreModule.dll</HintPath>
+          <HintPath>$(GameDir)\MelonLoader\Managed\UnityEngine.CoreModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.UI">
-          <HintPath>$(BonelabDir)\MelonLoader\Managed\UnityEngine.UI.dll</HintPath>
+          <HintPath>$(GameDir)\MelonLoader\Managed\UnityEngine.UI.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.UIModule">
-          <HintPath>$(BonelabDir)\MelonLoader\Managed\UnityEngine.UIModule.dll</HintPath>
+          <HintPath>$(GameDir)\MelonLoader\Managed\UnityEngine.UIModule.dll</HintPath>
         </Reference>
 
         <Reference Include="System" />
@@ -84,26 +84,34 @@
     
     <ItemGroup>
         <Compile Include="Attributes\ViewDefinitionAttribute.cs" />
+        <Compile Include="BoneMenu.cs" />
+        <Compile Include="BonexParser.cs" />
         <Compile Include="Mod.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
+        <Compile Include="UI\ViewControllers\ModInfoViewController.cs" />
         <Compile Include="ViewController.cs" />
     </ItemGroup>
     
     <ItemGroup>
-      <Content Include="Bonex.csproj.user" />
       <EmbeddedResource Include="Resources\BonexSchema.xsd" />
     </ItemGroup>
     
+    <ItemGroup>
+        <None Include="Bonex.csproj.user" />
+    </ItemGroup>
+    
+    <ItemGroup>
+      <Folder Include="Tags\" />
+    </ItemGroup>
+    
+    <ItemGroup>
+      <Content Include="UI\Views\ModInfoView.bxml" />
+    </ItemGroup>
+
+    <Import Project="$(SolutionDir)\Mod.props" />
+    
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 
-    <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-        <Message Text="===== BONEX POST BUILD =====" Importance="high" />
-
-        <Message Text="Copying files to BONELAB installation..." Importance="high" />
-        <Copy SourceFiles="$(OutputPath)\Bonex.dll;$(OutputPath)\Bonex.pdb" DestinationFolder="$(BonelabDir)\Mods\" />
-        <Message Text="Finished copying files." Importance="high" />
-
-        <Message Text="Done!" Importance="high" />
-    </Target>
+    <Import Project="$(SolutionDir)\Mod.targets" />
     
 </Project>
