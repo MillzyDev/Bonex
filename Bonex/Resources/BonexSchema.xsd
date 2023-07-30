@@ -1,5 +1,13 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" id="Bonex">
+<?xml version="1.0" 
+      encoding="utf-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+           id="Bonex" 
+           elementFormDefault="unqualified" 
+           attributeFormDefault="unqualified">
+    
+    <xs:element name="text" type="TextTag" />
+    
+    <!-- TYPES -->
     
     <xs:simpleType name="bool">
         <xs:union>
@@ -260,8 +268,7 @@
         
         <xs:attribute name="rich-text" type="bool">
             <xs:annotation>
-                <xs:documentation>Whether or not to enable [rich
-                    text](http://digitalnativestudios.com/textmeshpro/docs/rich-text/)
+                <xs:documentation>Whether or not to enable rich text.
                 </xs:documentation>
             </xs:annotation>
         </xs:attribute>
