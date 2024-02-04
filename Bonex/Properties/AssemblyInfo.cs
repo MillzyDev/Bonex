@@ -24,5 +24,6 @@ using BuildInfo = Bonex.BuildInfo;
 [assembly: MelonID(BuildInfo.Id)]
 
 [assembly: VerifyLoaderVersion("0.5.7")]
+[assembly: HarmonyDontPatchAll]
 
 [assembly: MelonAdditionalDependencies("BoneLib")]

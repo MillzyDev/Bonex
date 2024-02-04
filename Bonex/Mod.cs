@@ -7,5 +7,7 @@ public class Mod : MelonMod
     public override void OnInitializeMelon()
     {
         LoggerInstance.Msg("Initialised Bonex");
+        
+        HarmonyInstance.PatchAll();
     }
 }

@@ -60,6 +60,9 @@
         <Reference Include="UnhollowerRuntimeLib">
           <HintPath>$(GameDir)\MelonLoader\Managed\UnhollowerRuntimeLib.dll</HintPath>
         </Reference>
+        <Reference Include="Unity.TextMeshPro">
+          <HintPath>$(GameDir)\MelonLoader\Managed\Unity.TextMeshPro.dll</HintPath>
+        </Reference>
         <Reference Include="UnityEngine">
           <HintPath>$(GameDir)\MelonLoader\Managed\UnityEngine.dll</HintPath>
         </Reference>
@@ -82,6 +85,8 @@
     </ItemGroup>
     
     <ItemGroup>
+        <Compile Include="BonelabUI.cs" />
+        <Compile Include="HarmonyPatches\MenuTest.cs" />
         <Compile Include="Mod.cs" />
         <Compile Include="Properties\AssemblyInfo.cs"/>
     </ItemGroup>
