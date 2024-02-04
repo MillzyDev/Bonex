@@ -1,6 +1,11 @@
-﻿namespace Bonex
+﻿using MelonLoader;
+
+namespace Bonex;
+
+public class Mod : MelonMod
 {
-    public class Mod
+    public override void OnInitializeMelon()
     {
+        LoggerInstance.Msg("Initialised Bonex");
     }
 }
